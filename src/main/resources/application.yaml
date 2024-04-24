@@ -5,6 +5,13 @@ spring:
   main.banner-mode: 'off'
   profiles:
     active: default
+  flyway:
+    enabled: true
+  datasource:
+    url: "${DATABASE_JDBC_URL}"
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 5
 
 management:
   endpoint:

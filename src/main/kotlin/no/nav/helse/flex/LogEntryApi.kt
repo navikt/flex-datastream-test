@@ -5,15 +5,16 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
+import java.time.OffsetDateTime
 
 @RestController
 @RequestMapping("/syk/datastream-test/api/v1")
-class LogEntryApi {
-    private final val log = logger()
-
+class LogEntryApi(
+    private val logEntryRepository: LogEntryRepository,
+) {
     @PostMapping("/log-entry")
     @ResponseStatus(HttpStatus.ACCEPTED)
     fun postLogEntry() {
-        log.info("Mottok POST-kall til /log-entry.")
+        logEntryRepository.save(LogEntryDbRecord(opprettet = OffsetDateTime.now()))
     }
 }

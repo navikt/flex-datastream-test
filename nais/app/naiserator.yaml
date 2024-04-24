@@ -36,10 +36,10 @@ spec:
         cascadingDelete: true
         tier: db-f1-micro
         diskType: SSD
-        highAvailability: true
+        highAvailability: false
         diskSize: 10
         pointInTimeRecovery: false
-        diskAutoresize: true
+        diskAutoresize: false
         databases:
           - name: flex-datastream-test-db
             envVarPrefix: DATABASE
