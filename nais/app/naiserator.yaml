@@ -39,7 +39,7 @@ spec:
         highAvailability: false
         diskSize: 10
         pointInTimeRecovery: false
-        diskAutoresize: true
+        diskAutoresize: false
         databases:
           - name: flex-datastream-test-db
             envVarPrefix: DATABASE
