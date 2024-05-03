@@ -1,0 +1,1 @@
+CREATE PUBLICATION flex_datastream_test_publication for ALL TABLES;
